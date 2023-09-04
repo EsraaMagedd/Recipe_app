@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:home_screen/dessert.dart';
+import 'package:home_screen/drinks.dart';
 
 
 
@@ -19,6 +20,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
+
         bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
@@ -36,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.person,color: Colors.white),
-              label: 'Account',
+              label: '',
             ),
           ],
         ),
@@ -171,7 +173,12 @@ class _MyHomePageState extends State<MyHomePage> {
            width: double.infinity,
            height: double.infinity,
            child: dessert(),
-         )
+         ),
+          Container(
+            width: double.infinity,
+            height: double.infinity,
+            child: drinks(),
+          )
         ]),
    
 

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:home_screen/home.dart';
 import 'package:home_screen/onboarding.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'custom_text_field.dart';
@@ -121,18 +122,24 @@ class _SignUp2State extends State<ProjectSignUp> {
                                               builder: (context) => onboarding()));
 
                                     };},
-                                  child: Container(
-                                    alignment: Alignment.center,
-                                    height: 50,
-                                    width: double.infinity,
-                                    decoration:BoxDecoration(
-                                        borderRadius:BorderRadius.circular(30),color: Color(0xfff94a0c)
-                                    ) ,
-                                    child: Text("Log In", style: TextStyle(
-                                      fontSize: 20,
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                    ),),
+                                  child: InkWell(
+                                    onTap: (){
+                                      Navigator.of(context).push(MaterialPageRoute(builder:
+                                          (context)=>MyHomePage()));
+                                    },
+                                    child: Container(
+                                      alignment: Alignment.center,
+                                      height: 50,
+                                      width: double.infinity,
+                                      decoration:BoxDecoration(
+                                          borderRadius:BorderRadius.circular(30),color: Color(0xfff94a0c)
+                                      ) ,
+                                      child: Text("Log In", style: TextStyle(
+                                        fontSize: 20,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                      ),),
+                                    ),
                                   ),
                                 ),
                                 SizedBox(width: 20,),
