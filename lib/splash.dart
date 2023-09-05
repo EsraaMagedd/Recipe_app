@@ -21,9 +21,18 @@ class _SplashScreenState extends State<SplashScreen> {
       _color = Colors.white;
       _text1 = Text("Yummy",style: GoogleFonts.lobster(textStyle: TextStyle(color: Color(0xfff94a0c)),fontSize: 70));
       setState(() {});
-    });
 
+    });
+    Future.delayed(Duration(seconds: 4)).then((value) =>
+        Get.offAll(onboarding(),)
+      // Navigator.pushAndRemoveUntil(
+      //   context,
+      //   MaterialPageRoute(builder: (context) => OnBoardingScreen()),
+      //       (Route<dynamic> route) => false,
+      // )
+    );
     super.initState();
+
   }
 
   @override

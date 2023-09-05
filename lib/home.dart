@@ -22,194 +22,194 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
-
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body:
-      TabBarView(children: [
-        SingleChildScrollView(
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        body:
+        TabBarView(children: [
+          SingleChildScrollView(
 
 
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(height: 30,),
-                        Text("All recipes for you",style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 25,
-
-                        ),),
-                        Text("Choose what you want ..",style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                          color: Color.fromARGB(255, 255, 82, 82),
-
-                        ),)
-                      ],
-                    ),
-                  )
-
-                ],
-              ),
-              SizedBox(height: 10,),
-              Container(
-                child: Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Row(
-                    children: [
-
-                      Icon(Icons.search,color: Colors.black,),
-                      Text("Search",style: TextStyle(
-                          color: Colors.black45
-                      ),)
-                    ],
-                  ),
-                ),
-                width: 350,
-                height: 50,
-                decoration: BoxDecoration(
-                    color: Colors.grey.withOpacity(0.2),
-                    borderRadius: BorderRadius.circular(50)
-                ),
-              ),
-              SizedBox(height: 20,),
-              TabBar(
-                indicator: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50), // Creates border
-                    color:Colors.grey.withOpacity(0.3)), //Change background color from here
-                tabs: [
-                  Tab(child: Text('Food',style: TextStyle(
-                      color: Color.fromARGB(255, 255, 82, 82),
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20
-                  ),),),
-                  Tab(child: Text('Dessert',style: TextStyle(
-                      color: Color.fromARGB(255, 255, 82, 82),
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20
-                  ),)),
-                  Tab(child: Text('Drinks',style: TextStyle(
-                      color: Color.fromARGB(255, 255, 82, 82),
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20
-                  ),)),
-                ],
-              ),
-
-              Container(
-                height: 260,
-                margin: EdgeInsets.all(5),
-                child: ListView(
+            child: Column(
+              children: [
+                Row(
                   children: [
-                    CarouselSlider.builder(
-                      itemCount:l2.length ,
-                      itemBuilder: (context,int itemIndex,int pageIndex){
-                        return slider(l2[itemIndex],context);
-                      },
-                      options: CarouselOptions(
-                        viewportFraction: 0.9,
-                        enlargeCenterPage: true,
-                        enlargeStrategy: CenterPageEnlargeStrategy.height,
-                        autoPlay: true,
-                        autoPlayInterval: Duration(seconds: 2),
-                        onPageChanged: (index,reason){
-                          setState((){
-                            currentIndex=index;
-                          });
-                        },
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(height: 30,),
+                          Text("All recipes for you",style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 25,
 
-                      ),),
+                          ),),
+                          Text("Choose what you want ..",style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            color: Color.fromARGB(255, 255, 82, 82),
+
+                          ),)
+                        ],
+                      ),
+                    )
 
                   ],
                 ),
-              ),
-
-// SizedBox(height: 100,),
-              Row(
-                children: [
-                  SizedBox(height: 100,),
-                  Container(
-                    width: 372,
-                    height: 380,
-                    // margin: EdgeInsets.all(10),
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: (context,index)=> items(l1[index],context),
-                      //separatorBuilder: (context,index)=>SizedBox(height: 20,)
-                      itemCount: l1.length,
-                    ),
-                    decoration: BoxDecoration(
-                      //   color: Colors.brown
-                    ),
-
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                SizedBox(height: 10,),
+                Container(
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Row(
                       children: [
-                        Text("Are you good at cooking?",style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
 
-                        ),),
-                        Text("Do you have recipes you want to publish?",style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-
-                        ),),
-                        Text("You can add from here to let us know your skills ",style: TextStyle(
-                          fontSize: 17,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black45
-
-                        ),),
-                        ElevatedButton(
-                          onPressed: () {
-                            Navigator.of(context).push(MaterialPageRoute(builder:
-                                (context)=>NoteScreen()));
-                          },
-                          child: Text('Click Here',style: TextStyle(fontSize: 22),),
-                          style: ElevatedButton.styleFrom(
-                            primary: Color.fromARGB(255, 255, 82, 82),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12), // <-- Radius
-                            ),
-                          ),
-                        ),
-
+                        Icon(Icons.search,color: Colors.black,),
+                        Text("Search",style: TextStyle(
+                            color: Colors.black45
+                        ),)
                       ],
                     ),
-                  )
-                ],
-              )
-            ],
+                  ),
+                  width: 350,
+                  height: 50,
+                  decoration: BoxDecoration(
+                      color: Colors.grey.withOpacity(0.2),
+                      borderRadius: BorderRadius.circular(50)
+                  ),
+                ),
+                SizedBox(height: 20,),
+                TabBar(
+                  indicator: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50), // Creates border
+                      color:Colors.grey.withOpacity(0.3)), //Change background color from here
+                  tabs: [
+                    Tab(child: Text('Food',style: TextStyle(
+                        color: Color.fromARGB(255, 255, 82, 82),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20
+                    ),),),
+                    Tab(child: Text('Dessert',style: TextStyle(
+                        color: Color.fromARGB(255, 255, 82, 82),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20
+                    ),)),
+                    Tab(child: Text('Drinks',style: TextStyle(
+                        color: Color.fromARGB(255, 255, 82, 82),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20
+                    ),)),
+                  ],
+                ),
+
+                Container(
+                  height: 260,
+                  margin: EdgeInsets.all(5),
+                  child: ListView(
+                    children: [
+                      CarouselSlider.builder(
+                        itemCount:l2.length ,
+                        itemBuilder: (context,int itemIndex,int pageIndex){
+                          return slider(l2[itemIndex],context);
+                        },
+                        options: CarouselOptions(
+                          viewportFraction: 0.9,
+                          enlargeCenterPage: true,
+                          enlargeStrategy: CenterPageEnlargeStrategy.height,
+                          autoPlay: true,
+                          autoPlayInterval: Duration(seconds: 2),
+                          onPageChanged: (index,reason){
+                            setState((){
+                              currentIndex=index;
+                            });
+                          },
+
+                        ),),
+
+                    ],
+                  ),
+                ),
+
+// SizedBox(height: 100,),
+                Row(
+                  children: [
+                    SizedBox(height: 100,),
+                    Container(
+                      width: 372,
+                      height: 380,
+                      // margin: EdgeInsets.all(10),
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context,index)=> items(l1[index],context),
+                        //separatorBuilder: (context,index)=>SizedBox(height: 20,)
+                        itemCount: l1.length,
+                      ),
+                      decoration: BoxDecoration(
+                        //   color: Colors.brown
+                      ),
+
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Are you good at cooking?",style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+
+                          ),),
+                          Text("Do you have recipes you want to publish?",style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+
+                          ),),
+                          Text("You can add from here to let us know your skills ",style: TextStyle(
+                            fontSize: 17,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black45
+
+                          ),),
+                          ElevatedButton(
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(builder:
+                                  (context)=>NoteScreen()));
+                            },
+                            child: Text('Click Here',style: TextStyle(fontSize: 22),),
+                            style: ElevatedButton.styleFrom(
+                              primary: Color.fromARGB(255, 255, 82, 82),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12), // <-- Radius
+                              ),
+                            ),
+                          ),
+
+                        ],
+                      ),
+                    )
+                  ],
+                )
+              ],
+            ),
           ),
+         Container(
+           width: double.infinity,
+           height: double.infinity,
+           child: dessert(),
+         ),
+          Container(
+            width: double.infinity,
+            height: double.infinity,
+            child: drinks(),
+          )
+        ]
         ),
-       Container(
-         width: double.infinity,
-         height: double.infinity,
-         child: dessert(),
-       ),
-        Container(
-          width: double.infinity,
-          height: double.infinity,
-          child: drinks(),
-        )
-      ]
       ),
     );
   }
@@ -256,7 +256,9 @@ List<data> l1=[
 - Half a spoon of yeast
 - A teaspoon of white honey
 - Three and a third cup of flour from 420 to 450''',
-      "https://www.youtube.com/watch?v=hfh9hsJkUYc",)
+      "https://www.youtube.com/watch?v=hfh9hsJkUYc",
+      ""
+    )
 
   ),
   data(
@@ -270,7 +272,8 @@ List<data> l1=[
 - 4 tablespoons vinegar
 - Grated onion, squeezed without juice
 - A quarter cup of oil''',
-      "https://www.youtube.com/watch?v=0aUPHu4YDPE",),
+      "https://www.youtube.com/watch?v=0aUPHu4YDPE",
+    ""),
   ),
   data(
       name: "Koushari",
@@ -282,7 +285,8 @@ List<data> l1=[
 - A quarter kilo of vermicelli
 - Spices (salt, black pepper, cumin)
 - Vegetable stock cube (optional)''',
-        "https://www.youtube.com/watch?v=RX6k_VjkM1M"),
+        "https://www.youtube.com/watch?v=RX6k_VjkM1M",
+    ""),
   ),
   data(
       name: "grape leaves",
@@ -295,7 +299,8 @@ List<data> l1=[
 - 3 tablespoons of ghee
 - 2 tablespoons health sauce
 - Spices''',
-        "https://www.youtube.com/watch?v=Xt2dc9Mevyc"),
+        "https://www.youtube.com/watch?v=Xt2dc9Mevyc",
+    ""),
   ),
   data(
       name:  "mulukhiyah",
@@ -309,7 +314,8 @@ List<data> l1=[
 - Stock cube
 - A sprinkle of sugar
 - salt''',
-        "https://www.youtube.com/watch?v=lQGdUrrNcKo"),
+        "https://www.youtube.com/watch?v=lQGdUrrNcKo",
+    ""),
   ),
   data(
       name: "Pasta with bechamel",
@@ -324,7 +330,8 @@ List<data> l1=[
 - Teaspoon salt
 - quarter tea spoon of black Peper
 - A quarter teaspoon of seven spices (optional)''',
-        "https://www.youtube.com/watch?v=JfRetm14Mso"),
+        "https://www.youtube.com/watch?v=JfRetm14Mso",
+        ""),
   ),
   data(
       name: "Stuffed cabbage",
@@ -338,7 +345,8 @@ List<data> l1=[
 - A teaspoon of cumin/dry coriander/salt
 - A teaspoon of sugar
 - Half a teaspoon of black pepper''',
-        "https://www.youtube.com/watch?v=lTMB6O2v6cg"),
+        "https://www.youtube.com/watch?v=lTMB6O2v6cg",
+    ""),
   ),
   data(
       name: "Vermicelli rice",
@@ -349,7 +357,8 @@ List<data> l1=[
 - 3 cups of rice
 - 3 cups of water
 - salt''',
-        "https://www.youtube.com/watch?v=G39FQ6V7tic"),
+        "https://www.youtube.com/watch?v=G39FQ6V7tic",
+    ""),
   ),
   data(
       name: "Shawarma",
@@ -363,7 +372,8 @@ List<data> l1=[
 - 1 tablespoon minced garlic
 - Lemon juice
 ''',
-        "https://www.youtube.com/watch?v=8JMqIHRKx1s"),
+        "https://www.youtube.com/watch?v=8JMqIHRKx1s",
+    ""),
   ),
   data(
       name: "grilled meet",
@@ -374,7 +384,8 @@ List<data> l1=[
 - Salt and black pepper
 - 3 tablespoons butter
 - Two cloves of garlic''',
-        "https://www.youtube.com/watch?v=AGqrbf86WGk"),
+        "https://www.youtube.com/watch?v=AGqrbf86WGk",
+        ""),
   ),
   data(
       name: "Grilled chicken",
@@ -388,7 +399,8 @@ List<data> l1=[
 - Salt-pepper
 - A small spoon of paprika
 - A large spoon of coriander''',
-        "https://www.youtube.com/watch?v=gGfTjFGJak4"),
+        "https://www.youtube.com/watch?v=gGfTjFGJak4",
+    ""),
   ),
   data(
       name: "Grilled fish",
@@ -402,7 +414,8 @@ List<data> l1=[
 - onion
 - Tom, green and red pepper
 - A tablespoon of dried coriander''',
-        "https://www.youtube.com/watch?v=jEpxIoA9hC0"),
+        "https://www.youtube.com/watch?v=jEpxIoA9hC0",
+    ""),
   ),
 
 

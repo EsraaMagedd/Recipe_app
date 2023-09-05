@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 
 class RecipeScreen extends StatefulWidget{
@@ -16,7 +17,13 @@ class _RecipeScreen extends State<RecipeScreen> {
 
   }
 }
-Widget recipe(String image,String text,String  link){
+
+Widget recipe(String image,String text,String  link,String link2){
+  changeLink(){
+    if(link==link){
+      link=link2;
+    }
+  }
   return Scaffold(
       body: Container(
         padding: const EdgeInsets.all(15),
@@ -216,6 +223,19 @@ Widget recipe(String image,String text,String  link){
                     ),
 
                   ],
+                ),
+              ),
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                },
+                child: Text('Another video'),
+                style: ElevatedButton.styleFrom(
+                  primary: Color(0xfff94a0c),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12), // <-- Radius
+                  ),
+
                 ),
               ),
 
