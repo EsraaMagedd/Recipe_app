@@ -30,7 +30,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:  RecipeScreen(),
+      home:  MyHomePage(),
       debugShowCheckedModeBanner: false,
     );
   }

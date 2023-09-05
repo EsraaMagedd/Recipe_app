@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:home_screen/dessert.dart';
 import 'package:home_screen/drinks.dart';
+import 'RecipeScreen.dart';
 
 
 
@@ -192,8 +193,9 @@ class data{
   String? name;
   String? image;
   String? image2;
+  Widget screen;
 
-  data({this.name ,this.image,this.image2});
+  data({this.name ,this.image,this.image2,required this.screen});
 
 }
 class data2{
@@ -220,52 +222,161 @@ List<data> l1=[
 
   data(
       name: "Pizza",
-      image: 'images/pizza.jpg'
+      image: 'images/pizza.jpg',
+    screen: recipe("images/pizza.jpg",
+      '''
+- A cup and a quarter of water
+- Half a small spoon of salt
+- Half a spoon of yeast
+- A teaspoon of white honey
+- Three and a third cup of flour from 420 to 450''',
+      "https://www.youtube.com/watch?v=hfh9hsJkUYc",)
 
   ),
   data(
       name: "Red Pasta",
-      image: 'images/Red_Pasta.png'
+      image: 'images/Red_Pasta.png',
+    screen: recipe("images/Red_Pasta.png",
+      '''
+- 4 cups of red tomato juice
+- Salt-pepper
+- Two tablespoons of cumin
+- 4 tablespoons vinegar
+- Grated onion, squeezed without juice
+- A quarter cup of oil''',
+      "https://www.youtube.com/watch?v=0aUPHu4YDPE",),
   ),
   data(
       name: "Koushari",
-      image: 'images/kushari.png'
+      image: 'images/kushari.png',
+    screen: recipe("images/kushari.png",
+        '''
+- Half a kilo of Egyptian rice
+- A quarter kilo of lentils
+- A quarter kilo of vermicelli
+- Spices (salt, black pepper, cumin)
+- Vegetable stock cube (optional)''',
+        "https://www.youtube.com/watch?v=RX6k_VjkM1M"),
   ),
   data(
       name: "grape leaves",
-      image: 'images/grape_leaves.png'
+      image: 'images/grape_leaves.png',
+    screen: recipe("images/grape_leaves.png",
+        '''
+- Half a kilo of Egyptian rice, washed, not soaked, and well drained
+- Half a kilo of tomato juice
+- Half a cup of oil
+- 3 tablespoons of ghee
+- 2 tablespoons health sauce
+- Spices''',
+        "https://www.youtube.com/watch?v=Xt2dc9Mevyc"),
   ),
   data(
       name:  "mulukhiyah",
-      image: 'images/mulukhiyah.png'
+      image: 'images/mulukhiyah.png',
+    screen: recipe("images/mulukhiyah.png",
+        '''
+- A frozen molokhia
+- Two cups of soup
+- 6 large tomato cloves
+- A tablespoon of dried coriander
+- Stock cube
+- A sprinkle of sugar
+- salt''',
+        "https://www.youtube.com/watch?v=lQGdUrrNcKo"),
   ),
   data(
       name: "Pasta with bechamel",
-      image:  'images/bechamel.png'
+      image:  'images/bechamel.png',
+    screen: recipe("images/bechamel.png",
+        '''
+- A teaspoon of butter or ghee
+- A small chopped onion
+- 2 cloves of minced garlic
+- 2 chopped tomatoes, peeled or grated
+- 1 teaspoon tomato sauce
+- Teaspoon salt
+- quarter tea spoon of black Peper
+- A quarter teaspoon of seven spices (optional)''',
+        "https://www.youtube.com/watch?v=JfRetm14Mso"),
   ),
   data(
       name: "Stuffed cabbage",
-      image: 'images/cabbage.png'
+      image: 'images/cabbage.png',
+    screen: recipe("images/cabbage.png",
+        '''
+- Half a kilo of unfiltered peeled tomato juice
+- 4 medium onions
+- Half a cup of oil
+- A tablespoon of ghee or butter
+- A teaspoon of cumin/dry coriander/salt
+- A teaspoon of sugar
+- Half a teaspoon of black pepper''',
+        "https://www.youtube.com/watch?v=lTMB6O2v6cg"),
   ),
   data(
       name: "Vermicelli rice",
-      image: 'images/rice.png'
+      image: 'images/rice.png',
+    screen: recipe("images/rice.png",
+        '''
+- A cup of noodles
+- 3 cups of rice
+- 3 cups of water
+- salt''',
+        "https://www.youtube.com/watch?v=G39FQ6V7tic"),
   ),
   data(
       name: "Shawarma",
-      image: 'images/Shawarma.png'
+      image: 'images/Shawarma.png',
+    screen: recipe("images/Shawarma.png",
+        '''
+- One kilo of boneless chicken, cut into fingers
+- 3/4 cup yogurt
+- 1/2 cup oil
+- 1/2 cup orange juice
+- 1 tablespoon minced garlic
+- Lemon juice
+''',
+        "https://www.youtube.com/watch?v=8JMqIHRKx1s"),
   ),
   data(
       name: "grilled meet",
-      image: 'images/meat.png'
+      image: 'images/meat.png',
+    screen: recipe("images/meat.png",
+       '''
+- A piece of steak
+- Salt and black pepper
+- 3 tablespoons butter
+- Two cloves of garlic''',
+        "https://www.youtube.com/watch?v=AGqrbf86WGk"),
   ),
   data(
       name: "Grilled chicken",
-      image:  'images/chicken.png'
+      image:  'images/chicken.png',
+    screen: recipe("images/chicken.png",
+        '''
+- tomatoes
+- onion
+- Bell pepper
+- 4 garlic cloves
+- Salt-pepper
+- A small spoon of paprika
+- A large spoon of coriander''',
+        "https://www.youtube.com/watch?v=gGfTjFGJak4"),
   ),
   data(
       name: "Grilled fish",
-      image: 'images/fish.png'
+      image: 'images/fish.png',
+    screen: recipe("images/fish.png",
+        '''
+- fish
+- carrot
+- tomatoes
+- celery
+- onion
+- Tom, green and red pepper
+- A tablespoon of dried coriander''',
+        "https://www.youtube.com/watch?v=jEpxIoA9hC0"),
   ),
 
 
@@ -343,7 +454,10 @@ Widget items(data d,BuildContext context){
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {showModalBottomSheet(
+                          backgroundColor: Colors.transparent,
+                          context: context, builder:
+                          (context)=>d.screen);},
                       child: Text('Start doing'),
                       style: ElevatedButton.styleFrom(
                         primary: Color.fromARGB(255, 255, 82, 82),
