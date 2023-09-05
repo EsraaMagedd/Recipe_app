@@ -3,7 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:home_screen/home.dart';
 import 'package:home_screen/onboarding.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'cubit/login_cubit.dart';
+import 'cubit/sign_up_cubit.dart';
 import 'custom_text_field.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+
 class ProjectSignUp extends StatefulWidget {
   const ProjectSignUp({super.key});
 
@@ -15,7 +20,9 @@ class _SignUp2State extends State<ProjectSignUp> {
   final _nameController = TextEditingController();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+  final _phoneController = TextEditingController();
   final mykey = GlobalKey<FormState>();
+  final mykey2 = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     PageController _controller =PageController();
@@ -113,35 +120,37 @@ class _SignUp2State extends State<ProjectSignUp> {
                                 SizedBox(height:25,),
                                 CustomTextField(height: 20, text: "Password", controller: _passwordController,isPassword: true),
                                 SizedBox(height:55,),
-                                InkWell(
-                                  onTap: () {
-                                    if(mykey.currentState!.validate()){
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute<void>(
-                                              builder: (context) => onboarding()));
+                                BlocBuilder<LoginCubit, LoginState>(
+                                  builder: (context, state) {
+                                    if(state is LoginLoadingState){
+                                      return Center(child: CircularProgressIndicator(),);
+                                    }
+                                    return InkWell(
+                                      onTap: () {
+                                        if (mykey.currentState!.validate()) {
+                                          context.read<LoginCubit>().login(
+                                            email: _emailController.text,
+                                            password: _passwordController.text,);
+                                          // Get.offAll(MainScreen());
 
-                                    };},
-                                  child: InkWell(
-                                    onTap: (){
-                                      Navigator.of(context).push(MaterialPageRoute(builder:
-                                          (context)=>MyHomePage()));
-                                    },
-                                    child: Container(
-                                      alignment: Alignment.center,
-                                      height: 50,
-                                      width: double.infinity,
-                                      decoration:BoxDecoration(
-                                          borderRadius:BorderRadius.circular(30),color: Color(0xfff94a0c)
-                                      ) ,
-                                      child: Text("Log In", style: TextStyle(
-                                        fontSize: 20,
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold,
-                                      ),),
-                                    ),
+                                        }
+                                      },
+                                          child: Container(
+                                            alignment: Alignment.center,
+                                            height: 50,
+                                            width: double.infinity,
+                                            decoration:BoxDecoration(
+                                                borderRadius:BorderRadius.circular(30),color: Color(0xfff94a0c)
+                                            ) ,
+                                            child: Text("Log In", style: TextStyle(
+                                              fontSize: 20,
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold,
+                                            ),),
+                                          ),
+                                        );
+          },
                                   ),
-                                ),
                                 SizedBox(width: 20,),
 
 
@@ -156,7 +165,7 @@ class _SignUp2State extends State<ProjectSignUp> {
                             .of(context)
                             .unfocus,
                         child: Form(
-                          key: mykey,
+                          key: mykey2,
                           child: Container(
                             width: double.infinity,
                             padding: EdgeInsets.only(right: 40,left: 40),
@@ -193,28 +202,36 @@ class _SignUp2State extends State<ProjectSignUp> {
                                 SizedBox(height:25,),
                                 CustomTextField(height: 20, text: "Password", controller: _passwordController,isPassword: true),
                                 SizedBox(height:55,),
-                                InkWell(
-                                  onTap: () {
-                                    if(mykey.currentState!.validate()){
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute<void>(
-                                              builder: (context) => onboarding()));
-
-                                    };},
-                                  child: Container(
-                                    alignment: Alignment.center,
-                                    height: 50,
-                                    width: double.infinity,
-                                    decoration:BoxDecoration(
-                                        borderRadius:BorderRadius.circular(30),color: Color(0xfff94a0c)
-                                    ) ,
-                                    child: Text("Sign Up", style: TextStyle(
-                                      fontSize: 20,
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                    ),),
-                                  ),
+                                BlocBuilder<SignUpCubit, SignUpState>(
+                                  builder: (context, state) {
+                                    if(state is SignUpLoadingState){
+                                      return Center(child: CircularProgressIndicator(),);
+                                    }
+                                    return InkWell(
+                                        onTap: () {
+                                          _phoneController.text="01204433333";
+                                          context.read<SignUpCubit>().signUp(
+                                              email: _emailController.text,
+                                              password: _passwordController.text,
+                                              name: _nameController.text,
+                                              phone: _phoneController.text,
+                                              );
+                                          },
+                                        child: Container(
+                                          alignment: Alignment.center,
+                                          height: 50,
+                                          width: double.infinity,
+                                          decoration:BoxDecoration(
+                                              borderRadius:BorderRadius.circular(30),color: Color(0xfff94a0c)
+                                          ) ,
+                                          child: Text("Sign Up", style: TextStyle(
+                                            fontSize: 20,
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold,
+                                          ),),
+                                        ),
+                                      );
+                                  },
                                 ),
                                 SizedBox(width: 20,),
 

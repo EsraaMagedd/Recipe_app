@@ -1,6 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
 import 'package:google_fonts/google_fonts.dart';
+import 'package:home_screen/onboarding.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -19,6 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
       _text1 = Text("Yummy",style: GoogleFonts.lobster(textStyle: TextStyle(color: Color(0xfff94a0c)),fontSize: 70));
       setState(() {});
     });
+
     super.initState();
   }
 
