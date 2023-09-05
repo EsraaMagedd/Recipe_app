@@ -121,7 +121,7 @@ class _dessertState extends State<dessert> {
               children: [
                 SizedBox(height: 100,),
                 Container(
-                  width: 372,
+                  width: 411,
                   height: 600,
                   // margin: EdgeInsets.all(10),
                   child: ListView.builder(
@@ -288,7 +288,7 @@ Widget items(data d,BuildContext context){
                   fontWeight: FontWeight.bold,
 
                 ),),
-                SizedBox(height: 30,),
+                SizedBox(height: 15,),
 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -296,7 +296,7 @@ Widget items(data d,BuildContext context){
                   children: [
                     ElevatedButton(
                       onPressed: () {},
-                      child: Text('Start doing'),
+                      child: Text('Start doing',style: TextStyle(color: Colors.white,fontSize: 20)),
                       style: ElevatedButton.styleFrom(
                         primary: Color.fromARGB(255, 255, 82, 82),
                         shape: RoundedRectangleBorder(

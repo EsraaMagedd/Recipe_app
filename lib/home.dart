@@ -137,7 +137,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: [
                     SizedBox(height: 100,),
                     Container(
-                      width: 372,
+                      width: 411,
                       height: 380,
                       // margin: EdgeInsets.all(10),
                       child: ListView.builder(
@@ -486,7 +486,7 @@ Widget items(data d,BuildContext context){
                   fontWeight: FontWeight.bold,
 
                 ),),
-                SizedBox(height: 30,),
+                SizedBox(height: 15,),
 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -497,7 +497,7 @@ Widget items(data d,BuildContext context){
                           backgroundColor: Colors.transparent,
                           context: context, builder:
                           (context)=>d.screen);},
-                      child: Text('Start doing'),
+                      child: Text('Start doing',style: TextStyle(color: Colors.white,fontSize: 20)),
                       style: ElevatedButton.styleFrom(
                         primary: Color.fromARGB(255, 255, 82, 82),
                         shape: RoundedRectangleBorder(

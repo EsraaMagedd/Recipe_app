@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:home_screen/home.dart';
 import 'package:home_screen/onboarding.dart';
+import 'package:home_screen/screens.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'cubit/login_cubit.dart';
 import 'cubit/sign_up_cubit.dart';
@@ -131,7 +133,7 @@ class _SignUp2State extends State<ProjectSignUp> {
                                           context.read<LoginCubit>().login(
                                             email: _emailController.text,
                                             password: _passwordController.text,);
-                                          // Get.offAll(MainScreen());
+                                            Get.offAll(pages());
 
                                         }
                                       },
@@ -216,6 +218,7 @@ class _SignUp2State extends State<ProjectSignUp> {
                                               name: _nameController.text,
                                               phone: _phoneController.text,
                                               );
+                                          Get.offAll(pages());
                                           },
                                         child: Container(
                                           alignment: Alignment.center,

@@ -40,16 +40,19 @@ class _pagesState extends State<pages> {
           (
 
           bottomNavigationBar: BottomNavigationBar(
+            //unselectedLabelStyle: const TextStyle(color: Colors.white, fontSize: 14),
+            //selectedLabelStyle: const TextStyle(color: Colors.white, fontSize: 14),
             onTap: x1,
             currentIndex: index2,
             type: BottomNavigationBarType.fixed,
             backgroundColor:Color.fromARGB(255, 255, 82, 82),
             unselectedFontSize: 20,
 
+
             items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
                 backgroundColor:Color.fromARGB(255, 255, 82, 82),
-                icon: Icon(Icons.home,color: Colors.white,),
+                icon: Icon(Icons.home,color: Colors.white,size: 30),
                 label: '',
 
               ),

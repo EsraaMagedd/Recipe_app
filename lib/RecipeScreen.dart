@@ -19,11 +19,8 @@ class _RecipeScreen extends State<RecipeScreen> {
 }
 
 Widget recipe(String image,String text,String  link,String link2){
-  changeLink(){
-    if(link==link){
-      link=link2;
-    }
-  }
+
+
   return Scaffold(
       body: Container(
         padding: const EdgeInsets.all(15),
@@ -64,8 +61,10 @@ Widget recipe(String image,String text,String  link,String link2){
                                 ),
                               ],
                             ),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(30),
+                            child: Container(
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),),
+
+
                               child: Image.asset("${image}",
                                 fit: BoxFit.cover,
                               ),
@@ -116,7 +115,7 @@ Widget recipe(String image,String text,String  link,String link2){
                       color: Colors.black,
 
                     ),),
-                    const SizedBox(width: 10,),
+                    //const SizedBox(width: 10,),
 
                   ],
                 ),
@@ -229,7 +228,7 @@ Widget recipe(String image,String text,String  link,String link2){
               ElevatedButton(
                 onPressed: () {
                 },
-                child: Text('Another video'),
+                child: Text('Another video',style: TextStyle(color: Colors.white,fontSize: 20)),
                 style: ElevatedButton.styleFrom(
                   primary: Color(0xfff94a0c),
                   shape: RoundedRectangleBorder(
