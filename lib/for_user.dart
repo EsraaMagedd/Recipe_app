@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:home_screen/hive.dart';
 
 class NoteScreen extends StatefulWidget{
   const NoteScreen({super.key});
@@ -7,7 +8,13 @@ class NoteScreen extends StatefulWidget{
 }
 class _NoteScreenState extends State<NoteScreen> {
   final noteContoroller = TextEditingController();
-  List<String> notesList=[];
+
+  @override
+  void initState() {
+    HiveHelper.getNotes();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +27,7 @@ class _NoteScreenState extends State<NoteScreen> {
           ),),
         actions: [
           actionButton(icon: Icons.delete_forever,onTap: (){
-            notesList.clear();
+            HiveHelper.notesList.clear();
             setState(() {
             });
           }),
@@ -31,7 +38,7 @@ class _NoteScreenState extends State<NoteScreen> {
         onPressed: () async {
           noteContoroller.clear();
           AlertDialog alert = AlertDialog(
-            title: Text("Add your note ..",style: TextStyle(color: Colors.redAccent.withOpacity(0.6)),),
+            title: Text("Add your recipie ..",style: TextStyle(color: Colors.redAccent.withOpacity(0.6)),),
             content: TextFormField(
               controller: noteContoroller,
             ),
@@ -45,10 +52,11 @@ class _NoteScreenState extends State<NoteScreen> {
                 },
               ),
               TextButton(
-                child: Text("Continue",style: TextStyle(color: Colors.redAccent.withOpacity(0.6)),),
+                child: Text("Add",style: TextStyle(color: Colors.redAccent.withOpacity(0.6)),),
                 onPressed:  () {
                   if(noteContoroller.text.isNotEmpty){
-                    notesList.add(noteContoroller.text);
+                   // HiveHelper.notesList.add(noteContoroller.text);
+                    HiveHelper.addNote(noteContoroller.text);
                     Navigator.pop(context);
                     setState(() {
 
@@ -70,12 +78,12 @@ class _NoteScreenState extends State<NoteScreen> {
         child: Icon(Icons.add),
       ),
       body: ListView.builder(
-          itemCount: notesList.length,
+          itemCount: HiveHelper.notesList.length,
           itemBuilder: (context, index)=>Stack(
             children: [
               InkWell(
                 onTap: () async {
-                  noteContoroller.text=notesList[index];
+                  noteContoroller.text=HiveHelper.notesList[index];
                   AlertDialog alert = AlertDialog(
                     title: Text("Add your note ..",style: TextStyle(color: Colors.redAccent.withOpacity(0.6)),),
                     content: TextFormField(
@@ -94,7 +102,7 @@ class _NoteScreenState extends State<NoteScreen> {
                         child: Text("Continue",style: TextStyle(color: Colors.redAccent.withOpacity(0.6)),),
                         onPressed:  () {
                           if(noteContoroller.text.isNotEmpty){
-                            notesList[index]=(noteContoroller.text);
+                            HiveHelper.notesList[index]=(noteContoroller.text);
                             Navigator.pop(context);
                             setState(() {
 
@@ -129,7 +137,7 @@ class _NoteScreenState extends State<NoteScreen> {
                     ),
                   child: Center(
                     child: Text(
-                      notesList[index],
+                      HiveHelper.notesList[index],
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 18,
@@ -141,7 +149,7 @@ class _NoteScreenState extends State<NoteScreen> {
               ),
               InkWell(
                 onTap: (){
-                  notesList.removeAt(index);
+                  HiveHelper.notesList.removeAt(index);
                   setState(() {
 
                   });

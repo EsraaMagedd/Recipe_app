@@ -43,25 +43,27 @@ Widget recipe(String image,String text,String  link){
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
-                          height: 250,
-                          width: 450,
+                      Center(
+                        child: Container(
+                            height: 250,
+                            width: 450,
 
-                          decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.5),
-                                blurRadius: 7,
-                                offset: Offset(0, 3), // changes position of shadow
-                              ),
-                            ],
-                          ),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(30),
-                            child: Image.asset("${image}",
-                              fit: BoxFit.cover,
+                            decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  blurRadius: 7,
+                                  offset: Offset(0, 3), // changes position of shadow
+                                ),
+                              ],
                             ),
-                          )
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(30),
+                              child: Image.asset("${image}",
+                                fit: BoxFit.cover,
+                              ),
+                            )
+                        ),
                       ),
                     ],
                   ),
@@ -151,7 +153,7 @@ Widget recipe(String image,String text,String  link){
                       padding: const EdgeInsets.all(8.0),
                       child: Container(
                         height: 250,
-                        width: 450,
+                        width: 300,
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage("${image}"),
@@ -241,7 +243,8 @@ List<Rdata> dlist=[
 - Half a small spoon of salt
 - Half a spoon of yeast
 - A teaspoon of white honey
-- Three and a third cup of flour from 420 to 450''',
+- Three and a third cup of flour from
+   420 to 450''',
     link:"https://www.youtube.com/watch?v=hfh9hsJkUYc",
   ),
   Rdata(

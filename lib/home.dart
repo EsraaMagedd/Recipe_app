@@ -24,253 +24,192 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
 
 
-   int index2=0;
-  /* final tabs=[
-     Container(
-       width: double.infinity,
-       height: double.infinity,
-       child: MyHomePage(),
-     ),
-     Container(
-       width: double.infinity,
-       height: double.infinity,
-       child: Text("serch"),
-     ),
-     Container(
-       width: double.infinity,
-       height: double.infinity,
-       child: fav(),
-     ),
-     Container(
-       width: double.infinity,
-       height: double.infinity,
-       child: Page1(),
-     ),
-   ];*/
+
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 3,
-      child: Scaffold(
+    return Scaffold(
+      body:
+      TabBarView(children: [
+        SingleChildScrollView(
 
-        bottomNavigationBar: BottomNavigationBar(
-          currentIndex: index2,
-          type: BottomNavigationBarType.fixed,
-          backgroundColor:Color.fromARGB(255, 255, 82, 82),
-          unselectedFontSize: 20,
 
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              backgroundColor:Color.fromARGB(255, 255, 82, 82),
-              icon: Icon(Icons.home,color: Colors.white,),
-              label: '',
-
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.search,color: Colors.white),
-              label: '',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.favorite_border,color: Colors.white),
-              label: '',
-            ),
-            BottomNavigationBarItem(
-              label: '',
-              icon: Icon(Icons.person,color: Colors.white),
-
-            ),
-          ],
-          onTap: (index){
-            setState(() {
-              index2=index;
-            });
-
-          },
-        ),
-        body:
-        TabBarView(children: [
-          SingleChildScrollView(
-            child: Column(
-              children: [
-                Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(height: 30,),
-                          Text("All recipes for you",style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 25,
-
-                          ),),
-                          Text("Choose what you want ..",style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
-                            color: Color.fromARGB(255, 255, 82, 82),
-
-                          ),)
-                        ],
-                      ),
-                    )
-
-                  ],
-                ),
-                SizedBox(height: 10,),
-                Container(
-                  child: Padding(
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  Padding(
                     padding: const EdgeInsets.all(10.0),
-                    child: Row(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        SizedBox(height: 30,),
+                        Text("All recipes for you",style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25,
 
-                        Icon(Icons.search,color: Colors.black,),
-                        Text("Search",style: TextStyle(
-                            color: Colors.black45
+                        ),),
+                        Text("Choose what you want ..",style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                          color: Color.fromARGB(255, 255, 82, 82),
+
                         ),)
                       ],
                     ),
-                  ),
-                  width: 350,
-                  height: 50,
-                  decoration: BoxDecoration(
-                      color: Colors.grey.withOpacity(0.2),
-                      borderRadius: BorderRadius.circular(50)
-                  ),
-                ),
-                SizedBox(height: 20,),
-                TabBar(
-                  indicator: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50), // Creates border
-                      color:Colors.grey.withOpacity(0.3)), //Change background color from here
-                  tabs: [
-                    Tab(child: Text('Food',style: TextStyle(
-                        color: Color.fromARGB(255, 255, 82, 82),
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20
-                    ),),),
-                    Tab(child: Text('Dessert',style: TextStyle(
-                        color: Color.fromARGB(255, 255, 82, 82),
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20
-                    ),)),
-                    Tab(child: Text('Drinks',style: TextStyle(
-                        color: Color.fromARGB(255, 255, 82, 82),
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20
-                    ),)),
-                  ],
-                ),
+                  )
 
-                Container(
-                  height: 260,
-                  margin: EdgeInsets.all(5),
-                  child: ListView(
+                ],
+              ),
+              SizedBox(height: 10,),
+              Container(
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Row(
                     children: [
-                      CarouselSlider.builder(
-                        itemCount:l2.length ,
-                        itemBuilder: (context,int itemIndex,int pageIndex){
-                          return slider(l2[itemIndex],context);
-                        },
-                        options: CarouselOptions(
-                          viewportFraction: 0.9,
-                          enlargeCenterPage: true,
-                          enlargeStrategy: CenterPageEnlargeStrategy.height,
-                          autoPlay: true,
-                          autoPlayInterval: Duration(seconds: 2),
-                          onPageChanged: (index,reason){
-                            setState((){
-                              currentIndex=index;
-                            });
-                          },
 
-                        ),),
-
+                      Icon(Icons.search,color: Colors.black,),
+                      Text("Search",style: TextStyle(
+                          color: Colors.black45
+                      ),)
                     ],
                   ),
                 ),
+                width: 350,
+                height: 50,
+                decoration: BoxDecoration(
+                    color: Colors.grey.withOpacity(0.2),
+                    borderRadius: BorderRadius.circular(50)
+                ),
+              ),
+              SizedBox(height: 20,),
+              TabBar(
+                indicator: BoxDecoration(
+                    borderRadius: BorderRadius.circular(50), // Creates border
+                    color:Colors.grey.withOpacity(0.3)), //Change background color from here
+                tabs: [
+                  Tab(child: Text('Food',style: TextStyle(
+                      color: Color.fromARGB(255, 255, 82, 82),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20
+                  ),),),
+                  Tab(child: Text('Dessert',style: TextStyle(
+                      color: Color.fromARGB(255, 255, 82, 82),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20
+                  ),)),
+                  Tab(child: Text('Drinks',style: TextStyle(
+                      color: Color.fromARGB(255, 255, 82, 82),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20
+                  ),)),
+                ],
+              ),
 
-// SizedBox(height: 100,),
-                Row(
+              Container(
+                height: 260,
+                margin: EdgeInsets.all(5),
+                child: ListView(
                   children: [
-                    SizedBox(height: 100,),
-                    Container(
-                      width: 372,
-                      height: 380,
-                      // margin: EdgeInsets.all(10),
-                      child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemBuilder: (context,index)=> items(l1[index],context),
-                        //separatorBuilder: (context,index)=>SizedBox(height: 20,)
-                        itemCount: l1.length,
-                      ),
-                      decoration: BoxDecoration(
-                        //   color: Colors.brown
-                      ),
+                    CarouselSlider.builder(
+                      itemCount:l2.length ,
+                      itemBuilder: (context,int itemIndex,int pageIndex){
+                        return slider(l2[itemIndex],context);
+                      },
+                      options: CarouselOptions(
+                        viewportFraction: 0.9,
+                        enlargeCenterPage: true,
+                        enlargeStrategy: CenterPageEnlargeStrategy.height,
+                        autoPlay: true,
+                        autoPlayInterval: Duration(seconds: 2),
+                        onPageChanged: (index,reason){
+                          setState((){
+                            currentIndex=index;
+                          });
+                        },
 
-                    ),
+                      ),),
+
                   ],
                 ),
-                Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("Are you good at cooking?",style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
+              ),
 
-                          ),),
-                          Text("Do you have recipes you want to publish?",style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
+// SizedBox(height: 100,),
+              Row(
+                children: [
+                  SizedBox(height: 100,),
+                  Container(
+                    width: 372,
+                    height: 380,
+                    // margin: EdgeInsets.all(10),
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context,index)=> items(l1[index],context),
+                      //separatorBuilder: (context,index)=>SizedBox(height: 20,)
+                      itemCount: l1.length,
+                    ),
+                    decoration: BoxDecoration(
+                      //   color: Colors.brown
+                    ),
 
-                          ),),
-                          Text("You can add from here to let us know your skills ",style: TextStyle(
-                            fontSize: 17,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black45
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("Are you good at cooking?",style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
 
-                          ),),
-                          ElevatedButton(
-                            onPressed: () {
-                              Navigator.of(context).push(MaterialPageRoute(builder:
-                                  (context)=>NoteScreen()));
-                            },
-                            child: Text('Click Here',style: TextStyle(fontSize: 22),),
-                            style: ElevatedButton.styleFrom(
-                              primary: Color.fromARGB(255, 255, 82, 82),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(12), // <-- Radius
-                              ),
+                        ),),
+                        Text("Do you have recipes you want to publish?",style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+
+                        ),),
+                        Text("You can add from here to let us know your skills ",style: TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black45
+
+                        ),),
+                        ElevatedButton(
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(builder:
+                                (context)=>NoteScreen()));
+                          },
+                          child: Text('Click Here',style: TextStyle(fontSize: 22),),
+                          style: ElevatedButton.styleFrom(
+                            primary: Color.fromARGB(255, 255, 82, 82),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12), // <-- Radius
                             ),
                           ),
+                        ),
 
-                        ],
-                      ),
-                    )
-                  ],
-                )
-              ],
-            ),
+                      ],
+                    ),
+                  )
+                ],
+              )
+            ],
           ),
-         Container(
-           width: double.infinity,
-           height: double.infinity,
-           child: dessert(),
-         ),
-          Container(
-            width: double.infinity,
-            height: double.infinity,
-            child: drinks(),
-          )
-        ]),
-
-
-
-
+        ),
+       Container(
+         width: double.infinity,
+         height: double.infinity,
+         child: dessert(),
+       ),
+        Container(
+          width: double.infinity,
+          height: double.infinity,
+          child: drinks(),
+        )
+      ]
       ),
     );
   }
@@ -620,3 +559,5 @@ Widget slider(data2 d2,BuildContext context){
     ),
   );
 }
+
+

@@ -1,4 +1,4 @@
-import 'package:hive/hive.dart';
+ import 'package:hive/hive.dart';
 
 class HiveHelper {
   static const notesBox = "NOTE_BOX";
@@ -12,13 +12,10 @@ class HiveHelper {
   static void addNote(String text) async {
     notesList.add(text);
     await myBox.put(notesBoxKey, notesList);
-    print(".........");
-    print(myBox.get(notesBoxKey));
+
   }
 
   static void getNotes() {
-    print("//////////");
-    print(myBox.get(notesBoxKey));
     if (myBox.isNotEmpty) {
       notesList = myBox.get(notesBoxKey);
     }
