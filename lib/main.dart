@@ -11,8 +11,7 @@ import 'cubit/login_cubit.dart';
 import 'cubit/sign_up_cubit.dart';
 import 'helper/dio_helper.dart';
 import 'splash.dart';
-
-import 'hive.dart';
+import 'helper/hive_helper.dart';
 import 'home.dart';
 import 'onboarding.dart';
 import 'helper/hive_helper.dart';

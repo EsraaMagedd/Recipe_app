@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:home_screen/hive.dart';
+
+import 'helper/hive_helper.dart';
 
 class NoteScreen extends StatefulWidget{
   const NoteScreen({super.key});
