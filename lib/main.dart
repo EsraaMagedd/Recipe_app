@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:home_screen/profile.dart';
+import 'RecipeScreen.dart';
+import 'splash.dart';
 
 import 'hive.dart';
 import 'home.dart';
@@ -33,7 +35,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:  MyHomePage(),
+      home:  RecipeScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
