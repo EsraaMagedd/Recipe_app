@@ -44,12 +44,12 @@ class _MyAppState extends State<MyApp> {
         BlocProvider(create: (context) => LoginCubit()),
         BlocProvider(create: (context) => SignUpCubit()),
       ],
-      child: GetMaterialApp(
+      child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: HiveHelper.getToken() == "" ? SplashScreen() : pages(),
+        home: HiveHelper.getToken() == "" ? MyHomePage() : pages(),
         debugShowCheckedModeBanner: false,
       ),
     );
