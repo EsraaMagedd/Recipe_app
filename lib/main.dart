@@ -1,15 +1,20 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:home_screen/profile.dart';
 import 'RecipeScreen.dart';
 import 'splash.dart';
 
+import 'hive.dart';
 import 'home.dart';
 import 'onboarding.dart';
 
 
 
-void main()  {
+void main() async  {
+  await Hive.initFlutter();
+  await Hive.openBox(HiveHelper.notesBox);
   runApp(const MyApp());
 }
 
