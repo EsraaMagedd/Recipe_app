@@ -1,9 +1,14 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:home_screen/dessert.dart';
 import 'package:home_screen/drinks.dart';
+import 'package:home_screen/profile.dart';
 
+import 'for_user.dart';
 
+const String Favorites_box="favorites_box";
 
 int currentIndex=0;
 class MyHomePage extends StatefulWidget {
@@ -15,6 +20,30 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
+
+   int index2=0;
+  /* final tabs=[
+     Container(
+       width: double.infinity,
+       height: double.infinity,
+       child: MyHomePage(),
+     ),
+     Container(
+       width: double.infinity,
+       height: double.infinity,
+       child: Text("serch"),
+     ),
+     Container(
+       width: double.infinity,
+       height: double.infinity,
+       child: fav(),
+     ),
+     Container(
+       width: double.infinity,
+       height: double.infinity,
+       child: Page1(),
+     ),
+   ];*/
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -22,27 +51,40 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Scaffold(
 
         bottomNavigationBar: BottomNavigationBar(
+          currentIndex: index2,
+          type: BottomNavigationBarType.fixed,
+          backgroundColor:Color.fromARGB(255, 255, 82, 82),
+          unselectedFontSize: 20,
+
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-              backgroundColor:Color.fromARGB(255, 255, 82, 82),
               icon: Icon(Icons.home,color: Colors.white,),
-              label: 'Home',
+              label: '',
+
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.search,color: Colors.white),
-              label: 'Search',
+              label: '',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.favorite_border,color: Colors.white),
-              label: 'Favourite',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person,color: Colors.white),
               label: '',
             ),
+            BottomNavigationBarItem(
+              label: '',
+              icon: Icon(Icons.person,color: Colors.white),
+
+            ),
           ],
+          onTap: (index){
+            setState(() {
+              index2=index;
+            });
+
+          },
         ),
-        body:TabBarView(children: [
+        body:
+        TabBarView(children: [
           SingleChildScrollView(
             child: Column(
               children: [
@@ -143,13 +185,14 @@ class _MyHomePageState extends State<MyHomePage> {
                     ],
                   ),
                 ),
-                // SizedBox(height: 100,),
+
+// SizedBox(height: 100,),
                 Row(
                   children: [
                     SizedBox(height: 100,),
                     Container(
                       width: 372,
-                      height: 600,
+                      height: 380,
                       // margin: EdgeInsets.all(10),
                       child: ListView.builder(
                         scrollDirection: Axis.horizontal,
@@ -163,9 +206,49 @@ class _MyHomePageState extends State<MyHomePage> {
 
                     ),
                   ],
+                ),
+                Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Are you good at cooking?",style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+
+                          ),),
+                          Text("Do you have recipes you want to publish?",style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+
+                          ),),
+                          Text("You can add from here to let us know your skills ",style: TextStyle(
+                            fontSize: 17,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black45
+
+                          ),),
+                          ElevatedButton(
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(builder:
+                                  (context)=>NoteScreen()));
+                            },
+                            child: Text('Click Here',style: TextStyle(fontSize: 22),),
+                            style: ElevatedButton.styleFrom(
+                              primary: Color.fromARGB(255, 255, 82, 82),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12), // <-- Radius
+                              ),
+                            ),
+                          ),
+
+                        ],
+                      ),
+                    )
+                  ],
                 )
-
-
               ],
             ),
           ),
@@ -180,7 +263,8 @@ class _MyHomePageState extends State<MyHomePage> {
             child: drinks(),
           )
         ]),
-   
+         
+        
 
 
       ),
@@ -353,7 +437,12 @@ Widget items(data d,BuildContext context){
                       ),
                     ),
                     SizedBox(width: 50,),
-                    Icon(Icons.favorite_border,color: Colors.red,),
+                    IconButton(onPressed: (){
+
+                    },
+                      icon: Icon(Icons.favorite_border),
+                         ),
+
                   ],
                 )
 
@@ -366,6 +455,8 @@ Widget items(data d,BuildContext context){
     ),
   ) ;
 }
+
+
 
 
 Widget slider(data2 d2,BuildContext context){
