@@ -49,13 +49,27 @@ Widget recipe(String image,String text,String  link,String link2){
                     children: [
                       Center(
                         child: Container(
-                          width: double.infinity,
-                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),),
+                            height: 250,
+                            width: 450,
+
+                            decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  blurRadius: 7,
+                                  offset: Offset(0, 3), // changes position of shadow
+                                ),
+                              ],
+                            ),
+                            child: Container(
+
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),),
 
 
-                          child: Image.asset("${image}",
-                            fit: BoxFit.cover,
-                          ),
+                              child: Image.asset("${image}",
+                                fit: BoxFit.cover,
+                              ),
+                            )
                         ),
                       ),
                     ],
@@ -91,16 +105,20 @@ Widget recipe(String image,String text,String  link,String link2){
                 ],
               ),
               SizedBox(height: 20,),
-              Container(
-                width: double.infinity,
-                child: Padding(
-                  padding: const EdgeInsets.all(.0),
-                  child: Text('''${text}''', style: const TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
+              Padding(
+                padding: const EdgeInsets.all(.0),
+                child: Row(
 
-                  ),),
+                  children: [
+                    Text('''${text}''', style: const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+
+                    ),),
+                    //const SizedBox(width: 10,),
+
+                  ],
                 ),
               ),
               SizedBox(height: 20,),
