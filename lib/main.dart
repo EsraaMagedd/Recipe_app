@@ -50,8 +50,8 @@ class _MyAppState extends State<MyApp> {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home:pages(),
-      // home: HiveHelper.getToken() == "" ? SplashScreen() : pages(),
+        //home:pages(),
+       home: HiveHelper.getToken() == "" ? SplashScreen() : pages(),
         debugShowCheckedModeBanner: false,
       ),
     );

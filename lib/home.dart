@@ -42,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          SizedBox(height: 30,),
+                          SizedBox(height: 40,),
                           Text("All recipes for you",style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 25,
@@ -138,7 +138,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: [
                     SizedBox(height: 100,),
                     Container(
-                      width: 500,
+                      width: 400,
                       height: 380,
                       // margin: EdgeInsets.all(10),
                       child: ListView.builder(

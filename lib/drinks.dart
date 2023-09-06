@@ -120,7 +120,7 @@ class _drinksState extends State<drinks> {
               children: [
                 SizedBox(height: 100,),
                 Container(
-                  width: 500,
+                  width: 400,
                   height: 600,
                   // margin: EdgeInsets.all(10),
                   child: ListView.builder(
