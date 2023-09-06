@@ -22,6 +22,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+    @override
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -137,7 +138,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: [
                     SizedBox(height: 100,),
                     Container(
-                      width: 411,
+                      width: 500,
                       height: 380,
                       // margin: EdgeInsets.all(10),
                       child: ListView.builder(
@@ -509,8 +510,11 @@ Widget items(data d,BuildContext context){
                     IconButton(onPressed: (){
 
                     },
-                      icon: Icon(Icons.favorite_border),
-                         ),
+                      icon: Icon(Icons.favorite_border,
+                     color: Colors.red,
+                      ),
+                    ),
+
 
                   ],
                 )
@@ -526,7 +530,7 @@ Widget items(data d,BuildContext context){
 }
 
 
-
+bool isPressed=true;
 
 Widget slider(data2 d2,BuildContext context){
   return Container(

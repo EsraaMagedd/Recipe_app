@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
+import 'package:home_screen/page2.dart';
 import 'package:home_screen/profile.dart';
 import 'package:home_screen/screens.dart';
 import 'package:home_screen/signUpIn.dart';
@@ -50,7 +51,7 @@ class _MyAppState extends State<MyApp> {
           primarySwatch: Colors.blue,
         ),
         home:pages(),
-        //home: HiveHelper.getToken() == "" ? SplashScreen() : pages(),
+      // home: HiveHelper.getToken() == "" ? SplashScreen() : pages(),
         debugShowCheckedModeBanner: false,
       ),
     );

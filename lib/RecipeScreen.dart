@@ -64,22 +64,22 @@ Widget recipe(String image,String text,String  link,String link2){
                             child:
                             Container(
                               child:  Image.asset("${image}",
-                                     fit: BoxFit.cover,
-                                   ),
+                                fit: BoxFit.cover,
+                              ),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.all(Radius.circular(20)),
                               ),
                             )
 
-                            // Container(
-                            //
-                            //   decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),),
-                            //
-                            //
-                            //   child: Image.asset("${image}",
-                            //     fit: BoxFit.fitWidth,
-                            //   ),
-                            // )
+                          // Container(
+                          //
+                          //   decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),),
+                          //
+                          //
+                          //   child: Image.asset("${image}",
+                          //     fit: BoxFit.fitWidth,
+                          //   ),
+                          // )
                         ),
                       ),
                     ],
