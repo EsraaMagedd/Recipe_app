@@ -50,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           Text("Choose what you want ..",style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
-                            color: Color.fromARGB(255, 255, 82, 82),
+                            color: Color(0xfff94a0c),
 
                           ),)
                         ],
@@ -87,17 +87,17 @@ class _MyHomePageState extends State<MyHomePage> {
                       color:Colors.grey.withOpacity(0.3)), //Change background color from here
                   tabs: [
                     Tab(child: Text('Food',style: TextStyle(
-                        color: Color.fromARGB(255, 255, 82, 82),
+                        color: Color(0xfff94a0c),
                         fontWeight: FontWeight.bold,
                         fontSize: 20
                     ),),),
                     Tab(child: Text('Dessert',style: TextStyle(
-                        color: Color.fromARGB(255, 255, 82, 82),
+                        color: Color(0xfff94a0c),
                         fontWeight: FontWeight.bold,
                         fontSize: 20
                     ),)),
                     Tab(child: Text('Drinks',style: TextStyle(
-                        color: Color.fromARGB(255, 255, 82, 82),
+                        color: Color(0xfff94a0c),
                         fontWeight: FontWeight.bold,
                         fontSize: 20
                     ),)),
@@ -183,7 +183,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             },
                             child: Text('Click Here',style: TextStyle(fontSize: 22),),
                             style: ElevatedButton.styleFrom(
-                              primary: Color.fromARGB(255, 255, 82, 82),
+                              primary: Color(0xfff94a0c),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(12), // <-- Radius
                               ),
@@ -499,7 +499,7 @@ Widget items(data d,BuildContext context){
                           (context)=>d.screen);},
                       child: Text('Start doing',style: TextStyle(color: Colors.white,fontSize: 20)),
                       style: ElevatedButton.styleFrom(
-                        primary: Color.fromARGB(255, 255, 82, 82),
+                        primary: Color(0xfff94a0c),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12), // <-- Radius
                         ),

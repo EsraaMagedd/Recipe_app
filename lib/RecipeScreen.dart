@@ -49,7 +49,7 @@ Widget recipe(String image,String text,String  link,String link2){
                     children: [
                       Center(
                         child: Container(
-                          width: 100,
+                          width: double.infinity,
                           decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),),
 
 
@@ -92,7 +92,7 @@ Widget recipe(String image,String text,String  link,String link2){
               ),
               SizedBox(height: 20,),
               Container(
-                width: 100,
+                width: double.infinity,
                 child: Padding(
                   padding: const EdgeInsets.all(.0),
                   child: Text('''${text}''', style: const TextStyle(

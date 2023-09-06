@@ -48,7 +48,7 @@ class Page1 extends StatelessWidget {
                               decoration: const BoxDecoration(
                                 borderRadius:
                                 BorderRadius.all(Radius.circular(30)),
-                                color: Colors.orange,
+                                color: Color(0xfff94a0c),
                               ),
                               child: IconButton(
                                 onPressed: () {},
@@ -146,7 +146,7 @@ class Page1 extends StatelessWidget {
                   },
                   child: Container(
                     decoration: BoxDecoration(
-                      color: Colors.orange,
+                      color: Color(0xfff94a0c),
                       borderRadius: BorderRadius.circular(25.0),
                     ),
                     height: 60,

@@ -41,9 +41,19 @@ class _SplashScreenState extends State<SplashScreen> {
         backgroundColor: _color,
         body: Center(
           child: Container(
-            height: 250,
-            width: 250,
-            child:_text1,
+            height: 400,
+            width: 400,
+            child:Column(
+              children: [
+
+                Container(
+                    height: 150,
+                    width: 150 ,
+                    child: Image(image: AssetImage("images/logo.png"),fit:BoxFit.cover)),
+                //SizedBox(height: 50),
+                _text1,
+              ],
+            ),
           ),
         )
     );

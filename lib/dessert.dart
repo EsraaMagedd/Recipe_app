@@ -72,17 +72,17 @@ class _dessertState extends State<dessert> {
                   color:Colors.grey.withOpacity(0.3)), //Change background color from here
               tabs: [
                 Tab(child: Text('Food',style: TextStyle(
-                    color: Color.fromARGB(255, 255, 82, 82),
+                    color: Color(0xfff94a0c),
                     fontWeight: FontWeight.bold,
                     fontSize: 20
                 ),),),
                 Tab(child: Text('Dessert',style: TextStyle(
-                    color: Color.fromARGB(255, 255, 82, 82),
+                    color: Color(0xfff94a0c),
                     fontWeight: FontWeight.bold,
                     fontSize: 20
                 ),)),
                 Tab(child: Text('Drinks',style: TextStyle(
-                    color: Color.fromARGB(255, 255, 82, 82),
+                    color: Color(0xfff94a0c),
                     fontWeight: FontWeight.bold,
                     fontSize: 20
                 ),)),
@@ -298,7 +298,7 @@ Widget items(data d,BuildContext context){
                       onPressed: () {},
                       child: Text('Start doing',style: TextStyle(color: Colors.white,fontSize: 20)),
                       style: ElevatedButton.styleFrom(
-                        primary: Color.fromARGB(255, 255, 82, 82),
+                        primary:Color(0xfff94a0c),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12), // <-- Radius
                         ),

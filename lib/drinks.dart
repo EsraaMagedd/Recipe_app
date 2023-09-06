@@ -71,17 +71,17 @@ class _drinksState extends State<drinks> {
                   color:Colors.grey.withOpacity(0.3)), //Change background color from here
               tabs: [
                 Tab(child: Text('Food',style: TextStyle(
-                    color: Color.fromARGB(255, 255, 82, 82),
+                    color: Color(0xfff94a0c),
                     fontWeight: FontWeight.bold,
                     fontSize: 20
                 ),),),
                 Tab(child: Text('Dessert',style: TextStyle(
-                    color: Color.fromARGB(255, 255, 82, 82),
+                    color: Color(0xfff94a0c),
                     fontWeight: FontWeight.bold,
                     fontSize: 20
                 ),)),
                 Tab(child: Text('Drinks',style: TextStyle(
-                    color: Color.fromARGB(255, 255, 82, 82),
+                    color: Color(0xfff94a0c),
                     fontWeight: FontWeight.bold,
                     fontSize: 20
                 ),)),

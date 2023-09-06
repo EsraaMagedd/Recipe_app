@@ -35,40 +35,39 @@ class _pagesState extends State<pages> {
   }
   @override
   Widget build(BuildContext context) {
-    return  DefaultTabController(length: 3,
-        child: Scaffold
-          (
+    return  Scaffold
+      (
 
-          bottomNavigationBar: BottomNavigationBar(
-            //unselectedLabelStyle: const TextStyle(color: Colors.white, fontSize: 14),
-            //selectedLabelStyle: const TextStyle(color: Colors.white, fontSize: 14),
-            onTap: x1,
-            currentIndex: index2,
-            type: BottomNavigationBarType.fixed,
-            backgroundColor:Color.fromARGB(255, 255, 82, 82),
-            unselectedFontSize: 20,
+      bottomNavigationBar: BottomNavigationBar(
+        //unselectedLabelStyle: const TextStyle(color: Colors.white, fontSize: 14),
+        //selectedLabelStyle: const TextStyle(color: Colors.white, fontSize: 14),
+        onTap: x1,
+        currentIndex: index2,
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: Color(0xfff94a0c),
+        unselectedFontSize: 20,
 
 
-            items: const <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                backgroundColor:Color.fromARGB(255, 255, 82, 82),
-                icon: Icon(Icons.home,color: Colors.white,size: 30),
-                label: '',
-
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.favorite_border,color: Colors.white),
-                label: '',
-              ),
-              BottomNavigationBarItem(
-                label: '',
-                icon: Icon(Icons.person,color: Colors.white),
-
-              ),
-            ],
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            backgroundColor: Color(0xfff94a0c),
+            icon: Icon(Icons.home,color: Colors.white,size: 30),
+            label: '',
 
           ),
-          body: tabs[index2],
-        ));
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite_border,color: Colors.white),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            label: '',
+            icon: Icon(Icons.person,color: Colors.white),
+
+          ),
+        ],
+
+      ),
+      body: tabs[index2],
+    );
   }
 }

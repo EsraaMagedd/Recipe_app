@@ -20,7 +20,7 @@ class _NoteScreenState extends State<NoteScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 255, 82, 82),
+        backgroundColor: Color(0xfff94a0c),
         title: Text("Your recipies",
           style: TextStyle(
             fontSize: 27,
@@ -35,7 +35,7 @@ class _NoteScreenState extends State<NoteScreen> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Color.fromARGB(255, 255, 82, 82),
+        backgroundColor: Color(0xfff94a0c),
         onPressed: () async {
           noteContoroller.clear();
           AlertDialog alert = AlertDialog(
