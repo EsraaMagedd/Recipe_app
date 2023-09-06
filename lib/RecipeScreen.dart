@@ -50,7 +50,7 @@ Widget recipe(String image,String text,String  link,String link2){
                       Center(
                         child: Container(
                             height: 250,
-                            width: 450,
+                            width: 350,
 
                             decoration: BoxDecoration(
                               boxShadow: [
@@ -61,15 +61,25 @@ Widget recipe(String image,String text,String  link,String link2){
                                 ),
                               ],
                             ),
-                            child: Container(
-
-                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),),
-
-
-                              child: Image.asset("${image}",
-                                fit: BoxFit.cover,
+                            child:
+                            Container(
+                              child:  Image.asset("${image}",
+                                     fit: BoxFit.cover,
+                                   ),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.all(Radius.circular(20)),
                               ),
                             )
+
+                            // Container(
+                            //
+                            //   decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),),
+                            //
+                            //
+                            //   child: Image.asset("${image}",
+                            //     fit: BoxFit.fitWidth,
+                            //   ),
+                            // )
                         ),
                       ),
                     ],
@@ -111,7 +121,7 @@ Widget recipe(String image,String text,String  link,String link2){
 
                   children: [
                     Text('''${text}''', style: const TextStyle(
-                      fontSize: 20,
+                      fontSize: 18,
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
 
@@ -122,6 +132,7 @@ Widget recipe(String image,String text,String  link,String link2){
                 ),
               ),
               SizedBox(height: 20,),
+              //video
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -132,19 +143,15 @@ Widget recipe(String image,String text,String  link,String link2){
                       borderRadius: BorderRadius.circular(10),
                       color: Color(0xfff94a0c),
                     ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 0),
-                          child:  Text("Recipe video :", style: TextStyle(
-                            fontSize: 26,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),),
-                        ),
-                      ],
+                    child: Center(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 0),
+                        child:  Text("Recipe Video :", style: TextStyle(
+                          fontSize: 26,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),),
+                      ),
                     ),
                   ),
                 ],
