@@ -121,7 +121,7 @@ class _dessertState extends State<dessert> {
               children: [
                 SizedBox(height: 100,),
                 Container(
-                  width: 411,
+                  width: 500,
                   height: 600,
                   // margin: EdgeInsets.all(10),
                   child: ListView.builder(

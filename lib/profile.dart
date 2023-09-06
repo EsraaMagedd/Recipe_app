@@ -35,9 +35,7 @@ class Page1 extends StatelessWidget {
                         children: [
                           const CircleAvatar(
                             maxRadius: 80,
-                            backgroundImage: NetworkImage(
-                                scale: 2.0,
-                                "https://imgv3.fotor.com/images/gallery/AI-3D-Female-Profile-Picture.jpg"),
+                            backgroundImage: AssetImage('images/girl.PNG'),
                           ),
                           Positioned(
                             bottom: 0,
